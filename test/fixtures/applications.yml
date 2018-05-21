@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  email: MyString
+  firstName: MyString
+  lastName: MyString
+  overall_exp: 1
+  hvac_exp: 1
+  refrigeration_exp: 1
+  mechanical_exp: 1
+
+two:
+  email: MyString
+  firstName: MyString
+  lastName: MyString
+  overall_exp: 1
+  hvac_exp: 1
+  refrigeration_exp: 1
+  mechanical_exp: 1
