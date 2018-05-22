@@ -1,11 +1,10 @@
-import React, { Component } from 'react';
-import { withRouter } from 'react-router-dom';
+import React from 'react';
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 import FacebookLogin from 'react-facebook-login';
 import './Home.css';
 
-const Home = ({ email, firstName, lastName, updateState }) => {
+const Home = ({ email, firstName, lastName, updateState, next, errors }) => {
 
     const handleChange = name => event => {
         updateState(name, event.target.value);
@@ -48,26 +47,29 @@ const Home = ({ email, firstName, lastName, updateState }) => {
             appId="1044018745753728"
             autoLoad={true}
             fields="name,email"
-            callback={this.handleFacebook}
+            callback={handleFacebook}
             textButton="Autofill with Facebook"/>
           <div className="apply">
             <div>
               <TextField value={email}
                          placeholder="email"
-                         onChange={this.handleChange('email')}/>
+                         error={errors.email}
+                         onChange={handleChange('email')}/>
             </div>
             <div>
               <TextField value={firstName}
                          placeholder="First Name"
-                         onChange={this.handleChange('firstName')}/>
+                         error={errors.firstName}
+                         onChange={handleChange('firstName')}/>
             </div>
             <div>
               <TextField value={lastName}
                          placeholder="Last Name"
-                         onChange={this.handleChange('lastName')}/>
+                         error={errors.lastName}
+                         onChange={handleChange('lastName')}/>
             </div>
           </div>
-          <Button href="/experience"
+          <Button onClick={next}
                   variant="raised"
                   color="primary">
             Next

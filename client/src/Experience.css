@@ -1,3 +1,8 @@
 div.experience_form > div {
     margin: 50px auto;
 }
+
+div.select_div {
+    width: 50%;
+    display: inline-block;
+}

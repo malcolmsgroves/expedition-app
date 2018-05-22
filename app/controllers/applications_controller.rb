@@ -1,5 +1,6 @@
 class ApplicationsController < ApplicationController
   def create
+    puts application_params
     Application.create!(application_params)
   end
 

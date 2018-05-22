@@ -1,11 +1,11 @@
-import React, { Component } from 'react';
+import React from 'react';
 import TextField from '@material-ui/core/TextField';
 import MenuItem from '@material-ui/core/MenuItem';
 import Select from '@material-ui/core/Select';
 import Button from '@material-ui/core/Button';
 import './Experience.css';
 
-const Experience  = ({ overall_exp, hvac_exp, refrigeration_exp, mechanical_exp, beta, updateState, handleSubmit }) => {
+const Experience  = ({ overall_exp, hvac_exp, refrigeration_exp, mechanical_exp, beta, updateState, handleSubmit, prev }) => {
 
     const handleChange = name => event => {
         if(isNaN(event.target.value)) return;
@@ -50,47 +50,54 @@ const Experience  = ({ overall_exp, hvac_exp, refrigeration_exp, mechanical_exp,
     for(let i = 0; i <= 10; ++i) {
         MenuElements.push(
             <MenuItem value={i} key={i}>
-              { i == 10 ? "+10" : i }
+              { i === 10 ? "+10" : i }
             </MenuItem>
         );
    }
     
     const elementB = (
         <div className="experience_form">
-          Years Overall Work Experience
-          <Select value={overall_exp}
-                  onChange={handleChange('overall_exp')}>
-            { MenuElements }
-          </Select>
-          Years HVAC Work Experience
-          <Select value={hvac_exp}
-                  onChange={handleChange('hvac_exp')}>
-            { MenuElements }
-          </Select>
-          Years Refrigeration Work Experience
-          <Select value={refrigeration_exp}
-                  onChange={handleChange('refrigeration_exp')}>
-            { MenuElements }
-          </Select>
-          Years Mechanical Work Experience
-          <Select value={mechanical_exp}
-                  onChange={handleChange('mechanical_exp')}>
-            { MenuElements }
-          </Select>          
+          <div>
+            <div className="select_div">Years Overall Work Experience</div>
+            <Select value={overall_exp}
+                    onChange={handleChange('overall_exp')}>
+              { MenuElements }
+            </Select>
+          </div>
+          <div>
+            <div className="select_div">Years HVAC Work Experience</div>
+            <Select value={hvac_exp}
+                    onChange={handleChange('hvac_exp')}>
+              { MenuElements }
+            </Select>
+          </div>
+          <div>
+            <div className="select_div">Years Refrigeration Work Experience</div>
+            <Select value={refrigeration_exp}
+                    onChange={handleChange('refrigeration_exp')}>
+              { MenuElements }
+            </Select>
+          </div>
+          <div>
+            <div className="select_div">Years Mechanical Work Experience</div>
+            <Select value={mechanical_exp}
+                    onChange={handleChange('mechanical_exp')}>
+              { MenuElements }
+            </Select>
+          </div>
         </div>
     );
 
 
     return (
         <div className="experience">
-          <Button href="/"
+          <Button onClick={prev}
                   variant="raised"
                   color="secondary">
             back
           </Button>
           { beta ? elementB : elementA }
           <Button onClick={handleSubmit}
-                  href="/confirmation"
                   variant="raised"
                   color="primary">
             Submit Application
