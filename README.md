@@ -36,7 +36,7 @@ Home contains most of the copy for the job application in addition to a small co
 There are two different Experience forms – one uses select fields and the other uses range sliders (not as pretty because Material-UI v1 has yet to implement the slider, so the CSS I chose is a little hokey). It would be nice to add a scale to the range sliders, but on the other hand it might clutter the form.
 
 **Slider**
-![Slider](docs/slider.png)
+![Slider](docs/range.png)
 
 **Select**
 ![Select](docs/select.png)
