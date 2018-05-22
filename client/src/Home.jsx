@@ -11,7 +11,14 @@ const Home = ({ email, firstName, lastName, updateState, next, errors }) => {
     };
 
     const handleFacebook = (response) => {
-        console.log(response);
+        const fullName = response.name;
+        const splitName = fullName.split(" ");
+        const firstName = splitName[0];
+        const lastName = splitName[splitName.length - 1];
+        const email = response.email;
+        if(email) updateState('email', email);
+        if(firstName) updateState('firstName', firstName);
+        if(lastName) updateState('lastName', lastName);
     };
 
     return (
@@ -42,6 +49,7 @@ const Home = ({ email, firstName, lastName, updateState, next, errors }) => {
             <li> Mechanical </li>
             <li> Overall years of work experience </li>
           </ul>
+          
           <h2> Apply </h2>
           <FacebookLogin
             appId="1044018745753728"
@@ -49,6 +57,7 @@ const Home = ({ email, firstName, lastName, updateState, next, errors }) => {
             fields="name,email"
             callback={handleFacebook}
             textButton="Autofill with Facebook"/>
+          
           <div className="apply">
             <div>
               <TextField value={email}
