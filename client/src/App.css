@@ -1,6 +1,11 @@
+html, body, div#root {
+    background-color: #BBBAC6;
+}
+
+
 div.App {
     width: 70%;
-    padding: 25px;
+    padding: 50px;
     margin: auto;
 }
 

@@ -43,7 +43,7 @@ class App extends Component {
     updateState(key, value) {
         this.setState({
             [key]: value
-        }, () => console.log(this.state));
+        });
     }
 
     
@@ -133,7 +133,7 @@ class App extends Component {
       return (
           <div className="root">
             <CssBaseline/>
-            <Paper elevation={2} className="App">
+            <Paper elevation={4} className="App">
                 { PageElement }
               </Paper>
           </div>
