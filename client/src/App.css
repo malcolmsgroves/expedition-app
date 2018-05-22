@@ -3,3 +3,10 @@ div.App {
     padding: 25px;
     margin: auto;
 }
+
+@media only screen and (max-width: 600px) {
+    div.App {
+        width: 100%;
+        padding: 10px;
+    }
+}

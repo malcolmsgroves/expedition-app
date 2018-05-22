@@ -15,32 +15,56 @@ const Experience  = ({ overall_exp, hvac_exp, refrigeration_exp, mechanical_exp,
     const elementA = (
         <div className="experience_form">
           <div>
-            <TextField name="overall_exp"
-                       label="Overall Work Experience"
-                       onChange={handleChange('overall_exp')}
-                       value={overall_exp}/>
-            years
+            <div>
+              Overall Work Experience
+            </div>
+            <input type="range"
+                   onChange={handleChange('overall_exp')}
+                   value={overall_exp}
+                   min={0}
+                   max={10}
+                   className="slider"
+                   step={1}/>
+            <span>{ `${overall_exp} years `}</span>            
           </div>
           <div>
-            <TextField name="hvac_exp"
-                       label="HVAC Experience"
-                       onChange={handleChange('hvac_exp')}
-                       value={hvac_exp}/>
-            years
+            <div>
+              HVAC Experience
+            </div>
+            <input type="range"
+                   onChange={handleChange('hvac_exp')}
+                   value={hvac_exp}
+                   min={0}
+                   max={10}
+                   className="slider"
+                   step={1}/>
+            <span>{ `${hvac_exp} years `}</span>            
           </div>
           <div>
-            <TextField name="refrigeration_exp"
-                       label="Refrigeration Experience"
-                       onChange={handleChange('refrigeration_exp')}
-                       value={refrigeration_exp}/>
-            years
+            <div>
+              Refrigeration Experience
+            </div>
+            <input type="range"
+                   onChange={handleChange('refrigeration_exp')}
+                   value={refrigeration_exp}
+                   min={0}
+                   max={10}
+                   className="slider"
+                   step={1}/>
+            <span>{ `${refrigeration_exp} years `}</span>            
           </div>
           <div>
-            <TextField name="mechanical_exp"
-                       label="Mechanical Experience"
-                       onChange={handleChange('mechanical_exp')}
-                       value={mechanical_exp}/>
-            years
+            <div>
+              Mechanical Experience
+            </div>
+            <input type="range"
+                   onChange={handleChange('mechanical_exp')}
+                   value={mechanical_exp}
+                   min={0}
+                   max={10}
+                   className="slider"
+                   step={1}/>
+            <span>{ `${mechanical_exp} years `}</span>
           </div>
         </div>
     );

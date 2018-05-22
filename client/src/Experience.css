@@ -6,3 +6,10 @@ div.select_div {
     width: 50%;
     display: inline-block;
 }
+
+input.slider {
+    width: 50%;
+    margin: auto 5%;
+    height: 5px;
+    animate: 0.2s;
+}

@@ -9,6 +9,7 @@
     "postinstall": "npm run build && npm run deploy && echo 'Client built!'"
   },
   "dependencies": {
+    "rc-slider": "^8.6.1",
     "react-ga": "^2.5.2"
   }
 }

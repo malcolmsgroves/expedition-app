@@ -111,7 +111,7 @@ class App extends Component {
                               mechanical_exp={this.state.mechanical_exp}
                               updateState={this.updateState}
                               prev={this.prev}
-                              beta={this.state.beta}
+                              beta={false}
                               handleSubmit={this.submit}/>                    
                 );
             case 2:
