@@ -35,6 +35,12 @@ Home contains most of the copy for the job application in addition to a small co
 ### Experience
 There are two different Experience forms – one uses select fields and the other uses range sliders (not as pretty because Material-UI v1 has yet to implement the slider, so the CSS I chose is a little hokey). It would be nice to add a scale to the range sliders, but on the other hand it might clutter the form.
 
+**Slider**
+![Slider](docs/slider.png)
+
+**Select**
+![Select](docs/select.png)
+
 There might be a cleaner way to programmatically render the four inputs, but I chose to write it all out with the benefit of a simpler data structure. Would probably want to fix this for scale (store experience name with its key).
 
 Note: Experience maxes out at 10 years.
