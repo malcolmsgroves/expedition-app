@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { withRouter } from 'react-router-dom';
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 import FacebookLogin from 'react-facebook-login';
@@ -6,16 +7,8 @@ import './Home.css';
 
 const Home = ({ email, firstName, lastName, updateState }) => {
 
-    const handleEmailChange = (event) => {
-        updateState("email", event.target.value);
-    };
-
-    const handleFirstNameChange = (event) => {
-        updateState("firstName", event.target.value);
-    };
-
-    const handleLastNameChange = (event) => {
-        updateState("lastName", event.target.value);
+    const handleChange = name => event => {
+        updateState(name, event.target.value);
     };
 
     const handleFacebook = (response) => {
@@ -58,14 +51,26 @@ const Home = ({ email, firstName, lastName, updateState }) => {
             callback={this.handleFacebook}
             textButton="Autofill with Facebook"/>
           <div className="apply">
-            <div><TextField value={email} placeholder="email"/></div>
-            <div><TextField value={firstName} placeholder="First Name"/></div>
-            <div><TextField value={lastName} placeholder="Last Name"/></div>
+            <div>
+              <TextField value={email}
+                         placeholder="email"
+                         onChange={this.handleChange('email')}/>
+            </div>
+            <div>
+              <TextField value={firstName}
+                         placeholder="First Name"
+                         onChange={this.handleChange('firstName')}/>
+            </div>
+            <div>
+              <TextField value={lastName}
+                         placeholder="Last Name"
+                         onChange={this.handleChange('lastName')}/>
+            </div>
           </div>
           <Button href="/experience"
                   variant="raised"
                   color="primary">
-            Apply!
+            Next
           </Button>
         </div>
     );

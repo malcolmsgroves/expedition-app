@@ -1,3 +1,5 @@
 Rails.application.routes.draw do
-  resources :applications, only: [:create]
+  scope :api do
+    resources :applications, only: [:create]
+  end
 end
