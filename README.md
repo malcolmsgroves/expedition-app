@@ -51,4 +51,5 @@ A bare bones confirmation page that is displayed if the application was successf
 ## Future Work
 * Validations could be better (e.g. more descriptive of the errors)
 * Refactor jsx rendering to make the components reusable (```get``` and object of job application questions, ```render``` said questions)
+* Implement some *jest* snapshot testing to guard against regression.
 
